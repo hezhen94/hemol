@@ -1,0 +1,18 @@
+device: cuda  # or cpu
+generation_mode: de_novo  # or scaffold
+weights:
+  vina: 0.5
+  mw: 0.2
+  logp: 0.1
+  sa: 0.1
+  qed: 0.1
+target_mw: [100, 300]
+target_logp: [-1, 3]
+vina_executable: "/202321582029/aidd/vina"
+receptor_pdbqt: "start.pdbqt"
+temp_dir: "tmp_docking"
+tensorboard_log: "logs/"
+# configs/config.yaml 新增内容
+docking_center: [0.298, -0.381, -1.161]  # 对接盒子中心坐标
+box_size: [11.25, 11.25, 11.25]          # 对接盒子尺寸
+scaffold_smiles_file: "data/scaffolds.smi"  # 片段生长初始结构文件
